@@ -1,0 +1,219 @@
+/* Basic reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Full height of the viewport */
+    background-color: #f4f4f4; /* Light background color for the body */
+    position: relative;
+    overflow: auto; /* Allow scrolling */
+    background-image: url('Images/color1.jpg'); /* Change this to your image path */
+    background-size: cover; /* Ensure the background image covers the entire area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Keep the background fixed when scrolling */
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensures it covers content */
+    transition: opacity 1s ease; /* Smooth transition for fading */
+}
+
+.hidden {
+    display: none; /* Class to hide overlay */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Overlay image styling */
+#overlay img {
+    width: 50%; /* Ensure image takes up full container width */
+    height: 100%; /* Maintain aspect ratio */
+    border-radius: 50%; /* This makes the image circular */
+    /*max-width: 80%; /* Adjust to keep the image within bounds */
+    /*max-height: 80vh; /* Prevent overflow vertically */
+    object-fit: cover; /* Ensure proper scaling within the container */
+    animation: spin 30s linear infinite; /* Optional spinning animation */
+ object-fit: cover; /* Ensure the image covers the circular area */
+}
+
+/* Header styling */
+header {
+    background: #161b21; /* Blue background */
+    color: white;
+    padding: 5px 5px; /* Adjust padding for top and bottom */
+    text-align: center; /* Center the content */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Horizontal navigation */
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Main content styling */
+main {
+    flex: 1; /* Allow main content to grow and fill space */
+    padding: 10px; /* Add some padding to the main section */
+}
+
+section {
+    padding: 10px;
+}
+
+h2 {
+    color: #333; /* Dark text for headings */
+}
+
+/* Footer styling */
+footer {
+    background: #0a0909; /* Dark footer background */
+    color: white;
+    text-align: center;
+    padding: 10px 0; /* Space above and below the text */
+    position: relative; /* Allow footer to stay at bottom */
+    bottom: 0;
+    width: 100%; /* Full width */
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Gallery Styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 5px; /* Space between images */
+    padding: 20px;
+}
+
+.gallery-grid img {
+    width: 100%; /* Full width of the grid column */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the available space */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(160, 12, 12, 0.31); /* Subtle shadow */
+}
+
+/* Contact form adjustments */
+#fs-frm {
+    width: 30%; /* Reduce width to fit better on the page */
+    margin: 20px 0; /* Add some space around the form */
+    padding: 10px; /* Keep padding for better spacing */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    float: left; /* Align the form to the left */
+}
+
+#fs-frm-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds spacing between form elements */
+}
+
+#fs-frm label {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#fs-frm input[type="text"],
+#fs-frm input[type="email"],
+#fs-frm input[type="telephone"],
+#fs-frm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+#fs-frm textarea {
+    height: 120px; /* Set a fixed height for the message field */
+    resize: vertical; /* Allow vertical resizing if needed */
+}
+
+#fs-frm input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#fs-frm input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Section styling */
+section#contact {
+    padding: 40px 20px; /* Add some padding around the contact section */
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    flex-direction: column;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #fs-frm {
+        width: 95%;
+    }
+}
+
+/* Footer Social Media Links */
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Image styles */
+.image-class {
+    width: 100%; /* Makes the image take up the full width of its container */
+    height: 150px; /* Maintains the aspect ratio */
+    border-radius: 10px; /* Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
